@@ -18,14 +18,13 @@ autopep8 = "*"
 gspread =  "*"
 oauth2client = "*"
 
-
 [packages]
 pathlib = "*"
 py = "*"
+pytest-xdist = "*"
 
 [requires]
 python_version = "3.6"
 
 [pipenv]
 allow_prereleases = true
-
