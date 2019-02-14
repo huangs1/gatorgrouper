@@ -19,6 +19,7 @@ env:
 # install mdl for checking Markdown
 before_install:
   - gem install mdl
+
 notifications:
   email: never
 
@@ -28,10 +29,6 @@ install:
   - pipenv install --dev
   - pip install --upgrade --pre tox
 
-env:
-  matrix:
-    - TOXENV=py37
-
 jobs:
   include:
     - env: TOXENV=py34
@@ -40,9 +37,6 @@ jobs:
       python: '3.5'
     - env: TOXENV=py36
       python: '3.6'
-    - env: TOXENV=py36
-      python: '3.6'
-
 
 script:
   # - tox --recreate
