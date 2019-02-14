@@ -34,24 +34,23 @@ env:
 
 jobs:
   include:
-    # Coverage tracking is slow with pypy, skip it.
-    - env: TOXENV=pypy PYTEST_NO_COVERAGE=1
-      python: 'pypy-5.4'
-      dist: trusty
     - env: TOXENV=py34
       python: '3.4'
     - env: TOXENV=py35
       python: '3.5'
     - env: TOXENV=py36
       python: '3.6'
+    - env: TOXENV=py36
+      python: '3.6'
+
 
 script:
-  - tox --recreate
+  # - tox --recreate
   - pipenv run pytest tests --cov-config pytest.cov --cov
   - pipenv run flake8 tests*
-  - pipenv run flake8 gatorgrouper*
-  - pipenv run pylint *.py
+  - pipenv run flake8 *.py
   - pipenv run pylint tests
+  - pipenv run pylint *.py
   - mdl README.md
 
 after_success:

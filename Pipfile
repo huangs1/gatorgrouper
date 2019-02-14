@@ -17,11 +17,12 @@ pytest-clarity = "*"
 autopep8 = "*"
 gspread =  "*"
 oauth2client = "*"
+pytest-xdist = "*"
 
 [packages]
 pathlib = "*"
 py = "*"
-pytest-xdist = "*"
+
 
 [requires]
 python_version = "3.6"
