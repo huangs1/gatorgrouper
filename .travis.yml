@@ -46,6 +46,7 @@ script:
   - pipenv run pylint tests
   - pipenv run pylint *.py
   - mdl README.md
+  - pipenv run pytest tests/ -n 4
 
 after_success:
   - pipenv run codecov
